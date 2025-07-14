@@ -132,6 +132,7 @@ async def handle_callback(request: Request):
             reply_msg = TextSendMessage(text=response)
             await line_bot_api.reply_message(event.reply_token, reply_msg)
         elif event.message.type == "image":
+            user_id = event.source.user_id
             print(f"Received image message from user {user_id}")
             message_id = event.message.id
 
